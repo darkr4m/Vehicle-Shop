@@ -91,3 +91,40 @@ class CarManager:
     @services.setter
     def services(self, service):
         self._services.append(service)
+
+
+    def __str__(self):
+        return(f"""ID: {manager.id}
+Make: {self.make}
+Model: {self.model}
+Year: {self.year}
+Mileage: {self.mileage}
+Services: {self.services}""")
+
+
+def run_manager():
+    choice = input("""----------WELCOME----------
+[1] Add a car
+[2] View all cars
+[3] View total number of cars
+[4] See a car's details
+[5] Service a car
+[6] Update mileage
+[7] Quit\n""")
+    match choice:
+        case "1":
+            id = 1
+            make = input("Enter the car's make: ")
+            model = input("Enter the car's model: ")
+            year = input("Enter the car's manufacturing year: ")
+            return run_manager()
+        case _:
+            print("Invalid input.")
+            return run_manager()
+
+
+
+# manager = CarManager(1,"Kia","Soul",2015)
+# print(manager)
+
+run_manager()
