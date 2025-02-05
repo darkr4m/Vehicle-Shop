@@ -135,10 +135,20 @@ def run_manager():
             print(f"Total number of cars: {CarManager.total_cars}")
             return run_manager()
         case "4":
+            id = input("What is the car's ID?   ")
+            print(CarManager.all_cars.get(id))
             return run_manager()
         case "5":
+            id = input("What is the car's ID?   ")
+            car = CarManager.all_cars.get(id)
+            service = input("Enter service description:   ")
+            car.services = service
             return run_manager()
         case "6":
+            id = input("What is the car's ID?   ")
+            car = CarManager.all_cars.get(id)
+            mileage = input("Enter new mileage:   ")
+            car.mileage = mileage
             return run_manager()
         case "7":
             print("Goodbye!")
@@ -147,7 +157,16 @@ def run_manager():
             return run_manager()
 
 
-
+"""
+TODO:
+Validation
+Car not found
+increment id
+helper functions
+car class?
+confirmations
+submenus
+"""
 # manager = CarManager(1,"Kia","Soul",2015)
 # print(manager)
 
