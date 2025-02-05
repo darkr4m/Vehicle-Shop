@@ -50,3 +50,44 @@ class CarManager:
         self._year = year
         self._mileage = 0
         self._services = []
+
+    # GETTERS AND SETTERS
+
+    @property
+    def id(self):
+        return self._id
+    
+    @property
+    def make(self):
+        return self._make
+    @make.setter
+    def make(self, make):
+        self._make = make
+
+    @property
+    def model(self):
+        return self._model
+    @model.setter
+    def model(self, model):
+        self._model = model
+
+    @property
+    def year(self):
+        return self._year
+    @year.setter
+    def year(self, year):
+        self._year = year
+    
+    @property
+    def mileage(self):
+        return self._mileage
+    @mileage.setter
+    def mileage(self, mileage):
+        self._mileage = mileage
+
+    @property
+    def services(self):
+        return self._services
+    @services.setter
+    def services(self, service):
+        self._services.append(service)
