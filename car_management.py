@@ -51,6 +51,11 @@ class CarManager:
         self._mileage = 0
         self._services = []
 
+        # Sets the key to the id of this car, and assigns the value to the entire object - adds it to the all_cars dict.
+        CarManager.all_cars[self._id] = self
+        # increments the total number of cars by one
+        CarManager.total_cars += 1
+
     # GETTERS AND SETTERS
 
     @property
@@ -94,14 +99,14 @@ class CarManager:
 
 
     def __str__(self):
-        return(f"""ID: {manager.id}
+        return(f"""ID: {self.id}
 Make: {self.make}
 Model: {self.model}
 Year: {self.year}
 Mileage: {self.mileage}
 Services: {self.services}""")
 
-
+# Terminal program
 def run_manager():
     choice = input("""----------WELCOME----------
 [1] Add a car
@@ -117,7 +122,23 @@ def run_manager():
             make = input("Enter the car's make: ")
             model = input("Enter the car's model: ")
             year = input("Enter the car's manufacturing year: ")
+            CarManager(id,make,model,year)
+            print(f"Car(id: {id}) added successfully.")
+            print(CarManager.all_cars[id])
             return run_manager()
+        case "2":
+            print("All Cars:")
+            return run_manager()
+        case "3":
+            return run_manager()
+        case "4":
+            return run_manager()
+        case "5":
+            return run_manager()
+        case "6":
+            return run_manager()
+        case "7":
+            print("Goodbye!")
         case _:
             print("Invalid input.")
             return run_manager()
