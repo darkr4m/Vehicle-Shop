@@ -128,8 +128,11 @@ def run_manager():
             return run_manager()
         case "2":
             print("All Cars:")
+            for car in CarManager.all_cars.values():
+                print(f"{car.year} {car.make} {car.model}")
             return run_manager()
         case "3":
+            print(f"Total number of cars: {CarManager.total_cars}")
             return run_manager()
         case "4":
             return run_manager()
